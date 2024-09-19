@@ -1,7 +1,11 @@
 {
-    "HELLO": "Bonjour",
-    "LANGUAGE": "Choisir la langue",
-    "PERSONAL": "PERSONNEL",
-    "FINANCIAL": "FINANCIER"
-  }
-  
+  "HELLO": "Bonjour",
+  "LANGUAGE": "Choisir la langue",
+  "PersonalDetails": "Détails personnels",
+  "next": "suivant",
+  "back": "dos",
+  "FINANCIAL": "Détails financiers",
+  "FirstName": "Prénom",
+  "LastName": "Nom de famille",
+  "Revenue": "Revenu"
+}

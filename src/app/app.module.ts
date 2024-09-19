@@ -7,6 +7,15 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { FinancialDetailsComponent } from './financial-details/financial-details.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { DataService } from './services/data.service';
+import { MatCard } from '@angular/material/card';
+import { MatButton } from '@angular/material/button';
+import { MatOption, MatSelect } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,10 +32,19 @@ const routes: Routes = [
     AppComponent,
     PersonalDetailsComponent,
     FinancialDetailsComponent,
-  ], // Declare the AppComponent and any other components
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCard,
+    MatButton,
+    MatSelect,
+    MatOption,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -36,7 +54,7 @@ const routes: Routes = [
     }),
     RouterModule.forRoot(routes), // If routing is involved
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent], // Bootstraps the main AppComponent
 })
 export class AppModule {}

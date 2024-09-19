@@ -1,10 +1,30 @@
-<div>
-  <label>{{ 'LANGUAGE' | translate }}</label>
-  <select #langSelect (change)="switchLanguage(langSelect.value)">
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-    <!-- Add more languages here if needed -->
-  </select>
-</div>
+<div [class]="'fib background fi fi-' + flagCode"></div>
+<div class="d-flex flex-column justify-content-start align-items-end">
+  <!-- <div>
+    <label></label>
+    <select #langSelect (change)="switchLanguage(langSelect.value)">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      Add more languages here if needed
+    </select>
+  </div> -->
 
-<router-outlet></router-outlet>
+  <mat-form-field class="m-3" appearance="outline">
+    <mat-label>{{ "LANGUAGE" | translate }}</mat-label>
+    <mat-select
+      #langSelect
+      value="en"
+      (selectionChange)="switchLanguage(langSelect.value)"
+    >
+      <ng-container *ngFor="let country of languageOptions">
+        <mat-option [value]="country.value">
+          <span [class]="'fi fi-' + country.icon"></span>
+          {{ country.name }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- <div id="google_translate_element"></div> -->
+  <router-outlet></router-outlet>
+</div>

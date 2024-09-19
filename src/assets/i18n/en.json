@@ -1,7 +1,11 @@
 {
-    "HELLO": "Hello",
-    "LANGUAGE": "Select Language",
-    "APPLICATION": "APPLICATION",
-    "FINANCIAL": "FINANCIAL"
-  }
-  
+  "HELLO": "Hello",
+  "LANGUAGE": "Select Language",
+  "PersonalDetails": "Personal Details",
+  "next": "next",
+  "back": "back",
+  "FINANCIAL": "Financial Details",
+  "FirstName": "First Name",
+  "LastName": "Last Name",
+  "Revenue": "Revenue"
+}
